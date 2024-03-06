@@ -1,0 +1,2 @@
+# my-vite-template
+# todo
