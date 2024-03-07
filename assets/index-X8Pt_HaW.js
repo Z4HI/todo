@@ -1,0 +1,24 @@
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))l(r);new MutationObserver(r=>{for(const n of r)if(n.type==="childList")for(const s of n.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&l(s)}).observe(document,{childList:!0,subtree:!0});function o(r){const n={};return r.integrity&&(n.integrity=r.integrity),r.referrerPolicy&&(n.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?n.credentials="include":r.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function l(r){if(r.ep)return;r.ep=!0;const n=o(r);fetch(r.href,n)}})();const c=localStorage.getItem("items")?JSON.parse(localStorage.getItem("items")):[],f=document.querySelector(".addBtn"),d=document.querySelector(".rightDisplay"),y=document.querySelector("#submitBtn"),a=document.querySelector("#task"),u=document.querySelector("#date"),v=document.querySelector(".displayDate"),S=document.querySelector(".description"),m=document.querySelectorAll('input[name = "priority"]'),g=new Date;window.onload=()=>{T(),c&&i()};const k=(e,t,o,l,r)=>{let n={taskname:e,date:t,priority:o,description:l,completed:r};c.push(n),localStorage.setItem("items",JSON.stringify(c)),i()},i=()=>{d.innerHTML="";for(let e=0;e<c.length;e++){let t=document.createElement("div");t.classList.add("taskCard"),t.innerHTML=`
+    <div class="info">
+        <div id = "cardName"> Name : ${c[e].taskname}</div>
+        <div id = "cardDate"> Due Date : ${c[e].date}</div>
+        <div id = "cardPriority"> Priority: ${c[e].priority}</div>
+        <div id = "cardDescription"> Description : ${c[e].description}</div>
+    </div>
+    <div class="buttons">
+        <button class ="deleteCard"><i class="fa-solid fa-trash-can"></i></button>
+        <button class = "editBtn"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class = "completed"><i class="fa-regular fa-circle-check"></i></button>
+    </div>
+    <div class ="editdescription">
+    <form action="">
+          <label for="edittask">Edit Task Name</label>
+          <input type="text" name="edittask" id="edittask" placeholder="Edit Task Name">
+          <label for="date">Edit Date</label>
+          <input type="date" name="date" id="editdate"><span>x</span> <br>Edit description
+          <textarea id="edittextdescription" name="description" cols="10" rows="5"></textarea>
+          <button id = "saveBtn">Save</button>
+          <button id = "cancelBtn">Cancel</button>
+        </form>
+    </div>
+    `,d.appendChild(t)}A(),D(),C(),L(),b(),q(),p()},b=()=>{document.querySelectorAll("#cancelBtn").forEach((t,o)=>{t.addEventListener("click",l=>{l.preventDefault(),h(o)})})},h=e=>{document.querySelectorAll(".editdescription")[e].style.display="none"},p=()=>{const e=document.querySelectorAll(".taskCard"),t=document.querySelectorAll(".completed");for(let o=0;o<e.length;o++)c[o].completed==!0?t[o].style.backgroundColor="green":t[o].style.backgroundColor="white"},q=()=>{document.querySelectorAll(".completed").forEach((t,o)=>{t.addEventListener("click",()=>{c[o].completed==!1?c[o].completed=!0:c[o].completed=!1,p(),localStorage.setItem("items",JSON.stringify(c))}),console.log(c)})},C=()=>{let e=document.querySelectorAll(".editBtn");const t=document.querySelectorAll(".editdescription");e.forEach((o,l)=>{o.addEventListener("click",()=>{t[l].style.display="block",E(l)})})},E=e=>{document.querySelectorAll("#edittask")[e].value=c[e].taskname,document.querySelectorAll("#editdate")[e].value=c[e].date,document.querySelectorAll("#edittextdescription")[e].value=c[e].description},A=()=>{const e=document.querySelectorAll(".taskCard");for(let t=0;t<e.length;t++)c[t].priority=="high"&&(e[t].style.border="solid red 6px"),c[t].priority=="medium"&&(e[t].style.border="solid blue 6px")},L=()=>{document.querySelectorAll("#saveBtn").forEach((t,o)=>{t.addEventListener("click",l=>{l.preventDefault(),B(o)})})},B=e=>{c[e].taskname=document.querySelectorAll("#edittask")[e].value,c[e].date=document.querySelectorAll("#editdate")[e].value,c[e].description=document.querySelectorAll("#edittextdescription")[e].value,localStorage.setItem("items",JSON.stringify(c)),i()},D=()=>{document.querySelectorAll(".deleteCard").forEach((t,o)=>{t.addEventListener("click",()=>{I(o)})})},I=e=>{c.splice(e,1),localStorage.setItem("items",JSON.stringify(c)),i()},N=e=>{let t="";for(const o of e)o.checked&&(t=o.value);return t},O=()=>{a.value="",u.value="",m.forEach(function(e){e.checked=!1})},T=()=>{let e=g.toString().split(" ");v.innerHTML=`${e[0]}  ${e[1]}  ${e[2]}`};f.addEventListener("click",()=>{document.querySelector(".addTask").classList.toggle("visible")});y.addEventListener("click",e=>{e.preventDefault(),document.querySelector(".addTask").classList.toggle("visible");let t=a.value,o=u.value,l=N(m),r=S.value;k(t,o,l,r,!1),console.log(c),O()});
