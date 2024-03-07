@@ -4,44 +4,51 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/dbb7381a19.js" crossorigin="anonymous"></script>
     <title>Boiler</title>
-    <script type="module" crossorigin src="./assets/index-BQg3hXmf.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bcnr6FZa.css">
+    <script type="module" crossorigin src="./assets/index-X8Pt_HaW.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DGsIqaFQ.css">
   </head>
   <body>
     <Header>
-      Header
+      <h1>To - Do List</h1>
       <div class="displayDate">
         
       </div>
     </Header>
+    <div class="leftNav">
+      <ul class="nav">
+        <li>Home</li>
+        <li>Today</li>
+        <li>Week</li>
+        <li>Projects</li>
+      </ul>
+    </div>
     <div id="app">
-
-      <div class="leftNav">
-        <ul class="nav">
-          <li>Home</li>
-          <li>Today</li>
-          <li>Week</li>
-          <li>Projects</li>
-        </ul>
-      </div>
       <div class="rightDisplay">
        
       </div>
       <div class="addTask">
         <form action="">
-          <label for="task">TASK</label>
-          <input type="text" name="task" id="task" placeholder="Enter Task">
-          <label for="date">Date</label>
-          <input type="date" name="date" id="date"> <span>x</span>
+          <div id = "addtasktop">
+            <label for="task">Task Name</label>
+            <input type="text" name="task" id="task" placeholder="Enter Task Name">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date">
+          </div>
+          <textarea class="description" name="description" id="" cols="10" rows="5"></textarea>
           <h4>priority</h5>
-          <input name="priority" type="radio" id="low" value="low">
-          <label for="low">LOW</label>
-          <input name="priority" type="radio" id="medium" value="medium">
-          <label for="medium">MEDIUM</label>
-          <input name="priority" type="radio" id="high" value="high">
-          <label for="high">High</label><br>
-            <button id="submitBtn" type="submit">Submit</button>
+          <div id="radioinput">
+            <input name="priority" type="radio" id="low" value="low">
+            <label for="low">LOW</label>
+            <input name="priority" type="radio" id="medium" value="medium">
+            <label for="medium">MEDIUM</label>
+            <input name="priority" type="radio" id="high" value="high">
+            <label for="high">HIGH</label><br>
+          </div>
+          <button id="submitBtn" type="submit">Submit</button>
+          <button id="closeAddTask" >Cancel</button>
+            
         </form>
       </div>
       <div class="addBtn">+</div>
