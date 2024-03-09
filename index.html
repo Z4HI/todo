@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/dbb7381a19.js" crossorigin="anonymous"></script>
     <title>Boiler</title>
-    <script type="module" crossorigin src="./assets/index-BkFtyZC7.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-9e78YW73.css">
+    <script type="module" crossorigin src="./assets/index-B8-FzABp.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-hKR1u18E.css">
   </head>
   <body>
-    <div class="container">
+    
       <div class="Header">
         <h3 class ="burger"><i class="fa-solid fa-bars"></i></h3>
         <h1>To-Do-List</h1>
@@ -22,17 +22,26 @@
           <ul class="nav">
             <li class="addBtn"><i class="fa-solid fa-circle-plus"></i></li>
             <li>HOME</li>
-            <li>TODAY</li>
+            <li><div class="navAddCategory">Add <i class="fa-solid fa-folder-plus"></i></div> 
+              CATEGORIES
+              <div class="categories">
+              
+            </div></li>
             <li>WEEK</li>
-      
           </ul>
         </div>
-        <div class="rightDisplay">
+        <div class="container">
         </div>
+          <div class="rightDisplay">
+          </div>
+       
         <div class="addTask">
           <form action="">
             <div id = "addtasktop">
-              <label for="task">Task Name</label>
+              <label for="category">Category :</label>
+              <select name="category" id="category">
+              </select>
+              <label for="task">Task Name :</label>
               <input type="text" name="task" id="task" placeholder="Enter Task Name">
               <label for="date">Date</label>
               <input type="date" name="date" id="date">
@@ -50,11 +59,15 @@
             </div>
             <button id="submitBtn" type="submit">Submit</button>
             <button id="closeAddTask">Cancel</button>
-      
           </form>
-        </div>
-        
-      </div>
+    </div>
+    <div class="addCategory">
+      <form action="">
+          <div id="closeAddCategory">x</div>
+          <label for="ceateCategory">Category Name :</label>
+          <input type="text" required name="createCategory" id="inputCategory" placeholder="Groceires..Books..etc">
+          <button type="submit" id="categorySubmitBtn">Submit</button>
+      </form>
     </div>
   </body>
 </html>
