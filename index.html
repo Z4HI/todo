@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/dbb7381a19.js" crossorigin="anonymous"></script>
     <title>Boiler</title>
-    <script type="module" crossorigin src="./assets/index-DLYid8wt.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CWU4aJdO.css">
+    <script type="module" crossorigin src="./assets/index-CIBMCCXX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B6NDdhI_.css">
   </head>
   <body>
     
       <div class="Header">
         <h3 class ="burger"><i class="fa-solid fa-bars"></i></h3>
         <div class="Hwrapper">
-          
-          <h1>To-Do-List</h1>
-          <h3 id = 'todayBtn'>TODAY</h3>
-          <h3>WEEK</h3>
+          <h1>TO-DO-LIST</h1>
+          <div id = 'todayBtn'>TODAY
+            <h5 id="todayTasksAmount">0</h3>
+            </div>
+          <div id="weekBtn">WEEK
+            <h5 id="weekTasksAmount">0</h3>
+          </div>
           <div class="displayDate"></div>
         </div>
       </div>
@@ -49,7 +52,7 @@
               <select name="category" id="category">
               </select>
               <label for="task">Task Name :</label>
-              <input type="text" required name="task" id="task" placeholder="Enter Task Name">
+              <input required type="text" name="task" id="task" placeholder="Enter Task Name">
               <label for="date">Date</label>
               <input type="date" name="date" id="date">
             </div>
