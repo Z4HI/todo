@@ -1,84 +1,91 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/dbb7381a19.js" crossorigin="anonymous"></script>
-    <title>Boiler</title>
-    <script type="module" crossorigin src="./assets/index-1mKhqHY8.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BjbWNhMB.css">
-  </head>
-  <body>
-    
-      <div class="Header">
-        <h3 class ="burger"><i class="fa-solid fa-bars"></i></h3>
-        <div class="Hwrapper">
-          <h1>TO-DO-LIST</h1>
-          <div id = 'todayBtn'>TODAY
-            <h5 id="todayTasksAmount">0</h3>
-            </div>
-          <div id="weekBtn">WEEK
-            <h5 id="weekTasksAmount">0</h3>
-          </div>
-          <div class="displayDate"></div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/dbb7381a19.js" crossorigin="anonymous"></script>
+  <title>Boiler</title>
+  <script type="module" crossorigin src="./assets/index-C_q9hLMc.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-KBqygdwE.css">
+</head>
+
+<body>
+  <div class="Header">
+    <h3 class="burger"><i class="fa-solid fa-bars"></i></h3>
+    <div class="Hwrapper">
+      <h1>TO-DO-LIST</h1>
+      <div id='todayBtn'>TODAY
+        <h5 id="todayTasksAmount">0</h3>
       </div>
-      <div id="app">
-        <div class="leftNav">
-          <ul class="nav">
-            <li class="addBtn">Add Task
-            <i class="fa-solid fa-circle-plus"></i></li>
-            <li class="homeBtn">HOME
-              <i class="fa-solid fa-house"></i>
-            </li>
-            <li class="navWrapper"><div class="navAddCategory"><div>Add <i class="fa-solid fa-folder-plus"></i></div>CATEGORIES</div> 
-              
-              <div class="categories">
-              
-            </div></li>
-  
-          </ul>
-        </div>
-        <div class="container">
-        </div>
-          <div class="rightDisplay">
-          </div>
-       
-        <div class="addTask">
-          <form action="">
-            <div id = "addtasktop">
-              <label for="category">Category :</label>
-              <select name="category" id="category">
-              </select>
-              <label for="task">Task Name :</label>
-              <input required type="text" name="task" id="task" placeholder="Enter Task Name">
-              <label for="date">Date</label>
-              <input type="date" name="date" id="date">
-            </div>
-            <h4>Details:</h4>
-            <textarea class="description" name="description" id="" cols="10" rows="5"></textarea>
-            <h4>Priority</h5>
-            <div id="radioinput">
-              <input name="priority" type="radio" id="low" value="low">
-              <label for="low">LOW</label>
-              <input name="priority" type="radio" id="medium" value="medium">
-              <label for="medium">MEDIUM</label>
-              <input name="priority" type="radio" id="high" value="high">
-              <label for="high">HIGH</label><br>
-            </div>
-            <button id="submitBtn" type="submit">Submit</button>
-            <button id="closeAddTask">Cancel</button>
-          </form>
+      <div id="weekBtn">WEEK
+        <h5 id="weekTasksAmount">0</h3>
+      </div>
+      <div class="displayDate"></div>
     </div>
-    <div class="addCategory">
+  </div>
+  <div id="app">
+
+    <ul class="nav">
+      <li class="addBtn">Add Task
+        <i class="fa-solid fa-circle-plus"></i>
+      </li>
+      <li class="navWrapper">
+        <div class="navAddCategory">
+          <div id="acInnerText">Add <i class="fa-solid fa-folder-plus"></i> CATEGORIES</div>
+        </div>
+        <div class="categories">
+
+        </div>
+      <li class="homeBtn">HOME
+        <i class="fa-solid fa-house"></i>
+      </li>
+      </li>
+
+    </ul>
+
+    <div class="container">
+    </div>
+    <div class="rightDisplay">
+    </div>
+
+    <div class="addTask">
       <form action="">
-          <div id="closeAddCategory">x</div>
-          <label for="ceateCategory">Category Name :</label>
-          <input type="text" required name="createCategory" id="inputCategory" placeholder="Groceires..Books..etc">
-          <button type="submit" id="categorySubmitBtn">Submit</button>
+        <div id="addtasktop">
+          <label for="category">Category :</label>
+          <select name="category" id="category">
+          </select>
+          <label for="task">Task Name :</label>
+          <input required type="text" name="task" id="task" placeholder="Enter Task Name">
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date">
+        </div>
+        <h4>Details:</h4>
+        <textarea class="description" name="description" id="" cols="10" rows="5"></textarea>
+        <h4>Priority</h5>
+          <div id="radioinput">
+            <input name="priority" type="radio" id="editlow" value="low">
+            <label for="low">LOW</label>
+            <input name="priority" type="radio" id="editmedium" value="medium">
+            <label for="medium">MEDIUM</label>
+            <input name="priority" type="radio" id="edithigh" value="high">
+            <label for="high">HIGH</label><br>
+          </div>
+          <button id="submitBtn" type="submit">Submit</button>
+          <button id="closeAddTask">Cancel</button>
       </form>
     </div>
+    <div class="addCategory">
+      <form action="" id="addCategoryForm">
+        <label for="ceateCategory">Category Name :</label>
+        <input type="text" required name="createCategory" id="inputCategory" placeholder="Groceires..Books..etc">
+        <label for="color">Choose Color for Category</label>
+        <input type="color" name="color" id="inputColor">
+        <button type="submit" id="categorySubmitBtn">Submit</button>
+      </form>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
